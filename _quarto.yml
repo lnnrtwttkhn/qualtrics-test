@@ -68,7 +68,7 @@ format:
       source: https://github.com/lnnrtwttkhn/version-control-exercises
       toggle: true
       caption: "Code"
-    highlight-style: monokai
+    highlight-style: github
     # execution:
     execute:
       eval: false

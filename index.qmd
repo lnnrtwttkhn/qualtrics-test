@@ -2,8 +2,6 @@
 title: "Version Control Exercises"
 format: html
 engine: knitr
-execute: 
-  eval: false
 ---
 
 ## Code Highlighting
@@ -70,6 +68,71 @@ For multi-line code blocks, add newlines like this:
 <pre class="language-bash"><code>git status
 git add .
 git commit -m "add code"</code></pre>
+```
+
+## Data
+
+### Load packages
+
+```{r}
+library(data.table)
+library(magrittr)
+library(ggplot2)
+library(patchwork)
+```
+
+### Load data
+
+```{r}
+path_data <- Sys.glob(here::here("data", "*tsv"))
+data <- read.delim(path_data, fileEncoding = "UTF-16", header = TRUE, sep = "\t")
+dt <- data %>%
+  setDT(.) %>%
+  .[-(c(1:2)), ] %>%
+  .[, LocationLongitude := as.numeric(LocationLongitude)] %>%
+  .[, LocationLatitude := as.numeric(LocationLatitude)]
+```
+
+### Location data
+
+```{r}
+#| warning: false
+map_world <- ggplot2::map_data(map = "world")
+plot_world <- ggplot() + 
+  geom_map(data = map_world, map = map_world, aes(x = long, y = lat, map_id = region),
+           color = "white", fill = "lightgray", linewidth = 0.1) +
+  geom_point(dt, mapping = aes(x = LocationLongitude, y = LocationLatitude),
+             colour = "red", alpha = 0.7) +
+  xlab("Longitude") +
+  ylab("Latitude") +
+  theme_void()
+```
+
+```{r}
+#| warning: false
+map_germany <- raster::getData("GADM", country = "DEU", level = 1)
+plot_germany <- ggplot() +
+  geom_polygon(data = map_germany, aes(x = long, y = lat, group = group),
+               color = "white", fill = "lightgray", size = 0.1) +
+  geom_point(dt, mapping = aes(x = LocationLongitude, y = LocationLatitude),
+             colour = "red", alpha = 0.7) +
+  coord_map() +
+  xlab("Longitude") +
+  ylab("Latitude") +
+  theme_void()
+```
+
+```{r}
+dt_hamburg <- map_world %>%
+  setDT(.) %>%
+  .[region == "Germany", ] %>%
+  .[lat >= 53.4 & lat <= 53.7] %>%
+  .[long >= 9.7 & long <= 10.3]
+```
+
+```{r}
+plot_world + plot_germany +
+    plot_layout(ncol = 2, widths = c(4, 1))
 ```
 
 ## References

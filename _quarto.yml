@@ -59,8 +59,8 @@ format:
     # code:
     code-fold: show
     code-summary: "Show the code"
-    code-overflow: wrap
-    code-line-numbers: true
+    code-overflow: scroll
+    code-line-numbers: false
     code-copy: true
     code-link: false
     code-annotations: true

@@ -1,4 +1,78 @@
 ---
 title: "Version Control Exercises"
 format: html
+engine: knitr
+execute: 
+  eval: false
 ---
+
+## Code Highlighting
+
+**[Example Survey](https://psyunihamburg.qualtrics.com/jfe/form/SV_2lOn7IT4pquTU10)**
+
+### Add external CSS
+
+1. In the **Survey** tab, click on {{< fa paint-roller >}} **Look and feel**.
+1. Click on **Style**.
+1. Paste the following link into the **External CSS** field.
+1. Don't forget to click **Apply** (bottom right) to apply your changes.
+
+```markdown
+https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css
+```
+
+### Add JavaScript to header
+
+1. In the **Survey** tab,  click on {{< fa paint-roller >}} `Look and feel`.
+1. Click on **General**.
+1. In the field **Header**, select **My Library: Your Name** (**Your Name** should display *your* name).
+
+#### Create new message
+
+If you want to add JavaScript libraries for the first time:
+
+1. Select **New Message ...**.
+A window **Create a New Message** should open.
+1. For the **Category** select **Look and Feel Messages**
+1. For the **Description** pick a description.
+For example, "Import JavaScript Libraries".
+1. In the editor window, select {{< fa file-code >}} **Source**
+1. Paste the following HTML code:
+1. Don't forget to click **Apply** (bottom right) to apply your changes.
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-bash.min.js"></script>
+```
+
+Note, that you might need to remove the newline for this to work.
+
+#### Add existing message
+
+1. In the field **Header**, select **My Library: Your Name** (**Your Name** should display *your* name).
+1. Select an existing message.
+For example, "Import JavaScript Libraries".
+1. Don't forget to click **Apply** (bottom right) to apply your changes.
+
+### Add code block
+
+To add a code block to the question text or a choice option, use the following code snippet.
+
+```html
+<pre class="language-bash"><code>git status</code></pre>
+```
+
+Note, that you might need to enter the **HTML View**.
+
+For multi-line code blocks, add newlines like this:
+
+```html
+<pre class="language-bash"><code>git status
+git add .
+git commit -m "add code"</code></pre>
+```
+
+## References
+
+- [Qualtrics Community: Linking a custom CSS file to a survey](https://community.qualtrics.com/custom-code-12/how-do-i-link-my-custom-css-file-in-the-file-library-to-a-survey-13491)
+- [Qualtrics Support: Adding a Survey Header/Footer](https://www.qualtrics.com/support/survey-platform/survey-module/look-feel/general-look-feel-settings/#AddFooterHeader)

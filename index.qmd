@@ -72,6 +72,29 @@ git add .
 git commit -m "add code"</code></pre>
 ```
 
+## Data
+
+### Retrieving data using the R `qualtRics` package
+
+```{r}
+library(qualtRics)
+```
+
+> There are two important credentials you need to authenticate with the Qualtrics API.
+These are your **API key** and **datacenter-specific base URL**.
+The base URL you pass to the qualtRics package should look like `yourdatacenterid.qualtrics.com`, without a scheme such as `https://`.
+The [Qualtrics API documentation](https://api.qualtrics.com/) explains how you can find your base URL.
+
+You can store your API credentials `QUALTRICS_API_KEY` and `QUALTRICS_BASE_URL` in your `.Renviron` file for repeated use across sessions.
+The qualtRics package has a function to help with this.
+
+```{r}
+
+qualtrics_api_credentials(api_key = "<YOUR-QUALTRICS_API_KEY>", 
+                          base_url = "<YOUR-QUALTRICS_BASE_URL>",
+                          install = TRUE)
+```
+
 ## References
 
 - [Qualtrics Community: Linking a custom CSS file to a survey](https://community.qualtrics.com/custom-code-12/how-do-i-link-my-custom-css-file-in-the-file-library-to-a-survey-13491)

@@ -6,9 +6,11 @@ execute:
   eval: false
 ---
 
-## Code Highlighting
+## Example Survey
 
-**[Example Survey](https://psyunihamburg.qualtrics.com/jfe/form/SV_2lOn7IT4pquTU10)**
+Take the **[example survey](https://psyunihamburg.qualtrics.com/jfe/form/SV_2lOn7IT4pquTU10)**!
+
+## Code Highlighting
 
 ### Add external CSS
 

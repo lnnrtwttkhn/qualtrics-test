@@ -1,0 +1,20 @@
+[[AdvancedFormat]]
+
+[[Block:Default Question Block]]
+
+[[Question:MC]]
+[[ID:Q1]]
+Let's see if we can import survey questions with code.
+<pre class="language-bash"><code>wget code-block-survey.txt</code></pre>
+
+[[AdvancedChoices]]
+[[Choice]]
+<pre class="language-bash"><code>git status</code></pre>
+[[Choice]]
+<pre class="language-bash"><code>git status
+git add .
+git commit -m "add code"</code></pre>
+[[Choice]]
+<pre class="language-bash"><code>git pull
+git push
+git merge main</code></pre>

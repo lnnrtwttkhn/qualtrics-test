@@ -32,8 +32,8 @@ author:
     - ref: uhh-psych
     - ref: mpib
     - ref: mps-ucl
-abstract: "This is the abstract."
-abstract-title: "Abstract"
+# abstract: "This is the abstract."
+# abstract-title: "Abstract"
 format:
   # see here for all html options: https://quarto.org/docs/reference/formats/html.html
   html:

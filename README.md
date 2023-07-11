@@ -1,8 +1,8 @@
-# Version Control Exercises
+# Qualtrics Test
 
 ## About
 
-This repository contains the source code for exercises for learning version control with git.
+This repository contains some tests and examples for surveys in Qualtrics.
 
 ## License
 

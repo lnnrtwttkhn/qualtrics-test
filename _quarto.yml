@@ -30,8 +30,8 @@ author:
   # metadata: object
   affiliations:
     - ref: uhh-psych
-    - ref: mpib
-    - ref: mps-ucl
+    # - ref: mpib
+    # - ref: mps-ucl
 # abstract: "This is the abstract."
 # abstract-title: "Abstract"
 format:
